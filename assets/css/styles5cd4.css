@@ -1,0 +1,583 @@
+@charset "utf-8";
+
+::selection{ background: #282828; color: white}
+::-moz-selection{ background: #282828; color: white}
+
+/* Border-boxing */
+*, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+input, select { -webkit-appearance:none; }
+select { -webkit-appearance: menulist; }
+
+/* Clearfix */
+.cf { zoom: 1; }
+.cf:before,
+.cf:after { content: ""; display: table; }
+.cf:after { clear: both; }
+
+/* Base */
+html,
+body,
+.wrapper { height: 100%; }
+body { background: #f8f9fd; font-size: 16px; margin: 0; padding: 0; }
+img { border: 0; }
+.wrap { width: 100%; max-width: 1600px; margin: 0 auto; padding: 0 40px; position: relative; }
+.controle { clear: both; word-spacing: -4px; height: 0; line-height: 0; }
+.divider { border-bottom: 1px solid #eee; height: 0; margin: 40px 0; overflow: hidden; }
+
+a { color: #181818; text-decoration: underline; }
+a:hover { text-decoration: none; }
+
+.text-left { text-align: left !important; }
+.text-right { text-align: right !important; }
+.text-center { text-align: center !important; }
+
+.sr-only { height: 1px; width: 1px; overflow: hidden; }
+
+/* Messages */
+.message { border-radius: 2px; color: #fff; font: bold 13px Arial, Helvetica, sans-serif; margin: 10px 0 20px; padding: 20px; text-shadow: 1px 1px 0px rgba(0,0,0,0.15); }
+
+/* Colors */
+.white { color: #fff; }
+.default { color: #3ccbb5; }
+
+/* UI Colors */
+.c-default { background: #fafafa; border: 1px solid #ddd; color: #484848; }
+.c-default:hover, .c-default:focus { background: #eee; }
+.c-primary { background: #2282F0; }
+.c-primary:hover, .c-primary:focus { background: #1771d8; }
+.c-success { background: #61b261; }
+.c-success:hover, .c-success:focus { background: #58a558; }
+.c-info { background: #428bca; }
+.c-info:hover, .c-info:focus { background: #3f7fb7; }
+.c-alert { background: #f0b94e; }
+.c-alert:hover, .c-alert:focus { background: #d9a43c; }
+.c-error { background: #d9534f; }
+.c-error:hover, .c-error:focus { background: #cf4a46; }
+.c-black { background: #353535; }
+.c-black:hover, .c-black:focus { background: #252525; }
+
+/* Scroll to top */
+.btn-scroll-to-top { display: none; cursor: pointer; border: 2px solid #282828; color: #282828; border-radius: 2px; position: fixed; bottom: 20px; right: 20px; z-index: 1200; width: 38px; height: 38px; text-align: center; line-height: 33px; font-family: FontAwesome; font-size: 1em; }
+.wp-fixed { box-shadow: 0 5px 10px rgba(0,0,0,0.15); position: fixed;bottom: 20px; right: 70px; z-index: 9999; width: auto; border-radius: 50px; background: #25d366; vertical-align: middle; text-align: center; padding: 7.5px 15px; color: #fff;  font: 600 13px 'Uni Neue W05', Arial, Helvetica, sans-serif; text-decoration: none; }
+.wp-fixed i { font-size: 26px; vertical-align: middle; margin: 0 5px 0 0; }
+
+/* Structure */
+header { background: none; border-bottom: 1px solid rgba(0,0,0,0.1); height: auto; margin: 0; padding: 25px 0; width: 100%; position: absolute; top: 0; left: 0; z-index: 3001; transition: all 0.35s ease; }
+header .wrap { position: relative; }
+header .logotipo { float: left; margin: 0 50px 0 0; padding: 0; text-decoration: none; }
+header .logotipo img { display: block; max-width: 250px; max-height: 45px; }
+header .favicon { display: none; float: left; }
+header .favicon img { display: block; max-width: 45px; }
+header nav { display: block; height: 100%; overflow: auto; margin: 0 0; padding: 0; text-align: left; }
+header nav a { color: #fff; display: inline-block; font: 500 16px/45px 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: 0; margin: 0 0 0 8px; padding: 0 12px; text-decoration: none; text-transform: none; transition: all 0.5s ease; }
+header nav a:hover { color: #f97a2f; }
+header .nav-ico,
+header .close-btn { display: none; }
+header nav a.btn-demo { background: #742b64; border: 0; border-radius: 50px; cursor: pointer; color: #fff; font: 500 16px/39px 'Uni Neue W05', Arial, Helvetica, sans-serif; height: 40px; width: auto; padding: 0 25px; position: absolute; top: 2.5px; right: 40px; }
+header.fixed { position: fixed; background: #fff; border-bottom: 1px solid rgba(255,255,255,0.1); box-shadow: 0 0 105px rgba(0,0,0,0.15); padding: 20px 0; }
+header.fixed .logotipo-md { background: url(../images/logotipo-growthbuy-mkt-color.png) center no-repeat; background-size: contain; }
+header.fixed .logotipo-ds { background: url(../images/logotipo-growthbuy-ds-color.png) center no-repeat; background-size: contain; }
+header.fixed .logotipo img { visibility: hidden; }
+header.fixed nav { margin: 0; }
+header.fixed nav a:not(.btn-demo) { color: #282828; }
+
+footer { background: #fff; font-size: 0; margin: 0; padding: 50px 0; position: relative; width: 100%; }
+footer h4 { color: #742b64; font: 500 18px/180% 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 0; padding: 0; }
+footer h4 span { color: #f97a2f; }
+footer h4:first-line { font-weight: 900; font-size: 42px; letter-spacing: -2px; }
+footer h4:after { content: ''; height: 4px; width: 80px; border-radius: 30px; display: block; margin: 20px 0; background: #742b64; background: -moz-linear-gradient(65deg, #742b64 0%, rgb(195,0,100) 100%); background: -webkit-linear-gradient(65deg, #742b64 0%, rgb(195,0,100) 100%); background: linear-gradient(65deg, #742b64 0%, rgb(195,0,100) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#742b64', endColorstr='rgb(195,0,100)',GradientType=1 ); background-size: 100% 100%; }
+footer h5 { color: #742b64; font: 700 18px/110% 'Uni Neue W05', Arial, Helvetica, sans-serif;  margin: 0; padding: 0; text-transform: none; }
+footer h5:first-line { font-weight: 500; }
+footer h5:after { content: ''; height: 4px; width: 10px; border-radius: 30px; display: block; margin: 20px 0; background: #f97a2f; }
+footer p { color: #282828; font: 500 16px/170% 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 0; padding: 0; }
+footer a { text-decoration: none; }
+
+/* Home */
+.pub { background: #49113d; background: -moz-linear-gradient(65deg, #49113d 0%, #f97a2f 100%); background: -webkit-linear-gradient(65deg, #49113d 0%, #f97a2f 100%); background: linear-gradient(65deg, #49113d 0%, #f97a2f 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#49113d', endColorstr='#f97a2f',GradientType=1 ); background-size: 100% 100%; height: 85%; min-height: 620px; max-height: 850px; margin: 0; padding: 0; position: relative; width: 100%; }
+.pub .bx-wrapper,
+.pub .bx-viewport { height: 100% !important; }
+.pub ul,
+.pub ul li { height: 100%; list-style: none; margin: 0; padding: 0; }
+.pub ul li { background: #742b64; background-position: center; background-repeat: no-repeat; mix-blend-mode: screen; filter: grayscale(65%) contrast(1); background-size: cover; position: relative; }
+.pub ul li .wrap { position: relative; height: 100%; }
+.pub ul li:after { content: ''; position: absolute; top: 0; left: 0; z-index: 1000; width: 100%; height: 100%; background: #96207c; mix-blend-mode: multiply; opacity: 0.85; }
+.pub h1 { color: #fff; font: 700 52px/105% 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: -1px; margin: 0 0 50px; padding: 0; }
+.pub h1:first-line { font-weight: 300; }
+.pub .btns-cta { margin: 0 0; padding: 0 0 120px 60px; text-align: left; position: absolute; bottom: 0; left: 0; width: 50%; z-index: 1600; }
+.pub .btns-cta .pub-form { background: #fff; border: 0; border-radius: 50px; height: 54px; margin: 0 0 40px; position: relative; max-width: 90%; }
+.pub .btns-cta .pub-form input[type="text"],
+.pub .btns-cta .pub-form input[type="email"] { background: none; border: 0; font: 500 16px/56px 'Uni Neue W05', Arial, Helvetica, sans-serif; height: 54px; padding: 0 30px; width: 100%; outline: none; }
+.pub .btns-cta .pub-form input[type="submit"] { background: #742b64; border: 0; border-radius: 0 50px 50px 0; cursor: pointer; color: #fff; font: 800 16px/56px 'Uni Neue W05', Arial, Helvetica, sans-serif; height: 54px; width: auto; padding: 0 27.5px 0 25px; position: absolute; top: 0; right: -2px; }
+.pub .btns-cta ul,
+.pub .btns-cta ol { list-style: none; margin: 0; padding: 0; columns: 2; -webkit-columns: 2;  -moz-columns: 2; display: block; max-width: 100%; }
+.pub .btns-cta ul li,
+.pub .btns-cta ol li { color: #fff; font: 500 16px/26px 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 0; padding: 5px; }
+.pub .btns-cta ul li:before,
+.pub .btns-cta ol li:before { content: '\f00c'; color: #f97a2f; display: inline-block; margin: 0 10px; font-size: 12px; font-family: 'FontAwesome'; vertical-align: middle; }
+.pub .square-wrap { margin: 0 0; padding: 0 60px 120px 0; text-align: left; position: absolute; bottom: 0; right: 0; width: 30%; min-width: 475px;  z-index: 1600; }
+.pub .square { display: inline-block; background: #742b64; border-bottom: 3px solid rgba(0,0,0,0.15); border-radius: 40px; box-shadow: 10px 30px 55px rgba(0,0,0,0.35); color: #fff; font: 500 40px/115% 'Uni Neue W05', Arial, Helvetica, sans-serif; height: auto; padding: 45px 45px; }
+.pub .square strong { display: block; font-size: 58px; line-height: 100%; }
+
+.pub-ds { background: #49113d; background: -moz-linear-gradient(65deg, #49113d 0%, #f97a2f 100%); background: -webkit-linear-gradient(65deg, #49113d 0%, #f97a2f 100%); background: linear-gradient(65deg, #49113d 0%, #f97a2f 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#49113d', endColorstr='#f97a2f',GradientType=1 ); }
+.pub-md { background: #49113d; background: -moz-linear-gradient(65deg, #49113d 0%, #742b64 100%); background: -webkit-linear-gradient(65deg, #49113d 0%, #742b64 100%); background: linear-gradient(65deg, #49113d 0%, #742b64 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#49113d', endColorstr='#742b64',GradientType=1 ); }
+.pub.pub-md ul li { filter: grayscale(65%) contrast(1); }
+
+.disclaimer { background: #f97a2f; margin: -30px 0 0; position: relative; z-index: 2000; }
+.disclaimer .disclaimer-bg { background: #f97a2f; border-radius: 16px 60px 16px 60px; height: auto; padding: 50px 20px; text-align: left; overflow: hidden; position: relative; }
+.disclaimer h2 { color: #fff; font: 300 48px/105% 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: -1px; margin: 0; padding: 0; }
+.disclaimer h2 strong { font-weight: 800; }
+.disclaimer img { position: absolute; right: 10%; top: 50%; height: 300%; transform: translate(0,-50%);  mix-blend-mode: overlay; opacity: 0.5; }
+
+.section { border-bottom: 1px solid rgba(0,0,0,0.025); padding: 60px 0; font-size: 0; position: relative; }
+.section h2 { color: #742b64; font: 700 42px/100% 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: -0.5px; margin: 0 0 25px; padding: 0; }
+.section h3 { color: #282828; font: 100 30px/40px 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: 0; margin: 15px 0; padding: 0; }
+.section h4 { color: #050505; font: 900 18px/22px 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: 0; margin: 0 0 10px; padding: 0; }
+.section p { color: #666; font: 500 18px/28px 'Uni Neue W05', Arial, Helvetica, sans-serif; text-rendering: optimizelegibility; margin: 0 0 15px; }
+.section ul { color: #666; font: 500 16px/20px 'Uni Neue W05', Arial, Helvetica, sans-serif; text-rendering: optimizelegibility; font-feature-settings: "liga"; margin: 0 0 30px; padding: 0 25px; }
+.section ul li { margin: 8px 0; padding: 0; }
+.section a.btn { background: #fff; border-radius: 50px; display: inline-block; font: 500 20px 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 10px 0 25px; padding: 15px 45px; text-align: center; text-decoration: none; text-transform: lowercase; transition: all 0.5s ease; }
+.section .w-50 { display: inline-block; vertical-align: middle; width: 50%; padding: 0 50px; position: relative; }
+.section .w-50 img { display: block; width: 100%; max-width: 500px; margin: 0 auto; height: auto; }
+
+.funcionalidades .funcionalidades-slider { text-align: center; }
+.funcionalidades h2 { color: #f97a2f; font: 700 42px/100% 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: -0.5px; text-transform: none; position: relative; }
+.funcionalidades ul { list-style: none; margin: 0; padding: 0; }
+.funcionalidades ul li { float: left; width: 20%; overflow: visible !important; }
+.funcionalidade { background: #fff; border-radius: 16px; box-shadow: 0 10px 18px 0 rgba(0,0,0,.03); display: block; margin: 40px 15px; padding: 0; width: auto; transition: all 0.4s ease; position: relative; z-index: 1200;}
+.funcionalidade:hover { box-shadow: 0 10px 25px 0 rgba(0,0,0,0.125); margin: 30px 15px 50px; z-index: 1200; }
+.funcionalidade .image { background-color: #282828; background-position: center; background-repeat: no-repeat; background-size: cover; border-radius: 16px 16px 0 0; display: block; height: auto; opacity: 0.85; filter: grayscale(50%); transition: all 0.5s ease;}
+.funcionalidade .image img { display: block; width: 100%; height: auto; }
+.funcionalidade .info { min-height: auto; padding: 25px 50px; text-align: center; position: relative; left: 0; bottom: 0; width: 100%; }
+.funcionalidade .info h4 { color: #282828; font: 600 20px/105% 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 0 0 10px; padding: 0; }
+.funcionalidade .info p { color: #282828; font: 500 16px/135% 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 0; padding: 0; }
+.funcionalidade:hover .image { opacity: 1; filter: grayscale(0%); }
+.funcionalidades .funcionalidades-slider .arrow { display: inline-block; border: 2px solid #742b64; border-radius: 3px; cursor: pointer; margin: 3px; width: 40px; height: 40px; }
+.funcionalidades .funcionalidades-slider .arrow i { color: #742b64; display: block; text-align: center; font-size: 16px; line-height: 36px; }
+
+.como-fazemos { padding: 80px 0; }
+.como-fazemos h2 { color: #742b64; font: 700 42px/100% 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: -0.5px; text-transform: none; position: relative; }
+.como-fazemos .wrap { display: flex; align-items: flex-start; justify-content: center; }
+.como-fazemos-item { flex: 0 0 19%; display: flex; align-items: center; justify-content: center; background: #fff; border: 4px solid #f8f9fd; border-radius: 16px; height: 220px; margin: 16px 0; padding: 0 40px; text-align: center; position: relative; transition: all 0.45s ease; }
+.como-fazemos-item h4 { color: #666; font: 600 22px/105% 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 0; padding: 0; transition: all 0.45s ease; }
+.como-fazemos-item h4 span { display: block; color: #f5f5f5; font-size: 72px; margin: 0 0 -15px; }
+.como-fazemos-item:after { content: '\f054'; font-family: 'FontAwesome'; font-size: 14px; display: flex; align-items: center; justify-content: center; color: #fff; position: absolute; top: 50%; right: -22px; transform: translate(0,-50%); width: 40px; height: 40px; background: #f00; border-radius: 50%; z-index: 1200; }
+.como-fazemos-item:nth-child(1):after { background: #4f143c; }
+.como-fazemos-item:nth-child(2):after { background: #813238; }
+.como-fazemos-item:nth-child(3):after { background: #b85433; }
+.como-fazemos-item:nth-child(4):after { background: #f97a30; }
+.como-fazemos-item:last-child:after { display: none; }
+.como-fazemos-item:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.125); }
+.como-fazemos-item:hover h4 { color: #4f143c; }
+
+.perfis { padding: 80px 0; }
+.perfis .wrap { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; }
+.perfil-item { flex: 1; background: #fff; border-radius: 16px; margin: 16px; padding: 48px; text-align: left; position: relative; }
+.perfil-item .perfil-img { border-radius: 50%; overflow: hidden; margin: -72px 0 24px; width: 160px; height: 160px; }
+.perfil-item .perfil-img img { max-height: 160px; max-width: 100%; }
+.perfil-item .perfil-info { padding: 0; max-height: 240px; overflow: hidden; position: relative; transition: all 0.4s ease; }
+.perfil-item.on .perfil-info { max-height: unset; }
+.perfil-item .perfil-info:after { content: ''; position: absolute; bottom: 0; left: 0; height: 30px; width: 100%; background: rgba(255,255,255,0); background: -moz-linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); background: -webkit-linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(0,0,0,0.875)', endColorstr='rgba(255,255,255,1)',GradientType=1 ); }
+.perfil-item .perfil-info h2 { color: #4f143c; font: 600 24px/105% 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 0 0 8px; padding: 0; }
+.perfil-item .perfil-info span { display: block; color: #444; font: 500 15px/20px 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 0 0 24px; padding: 0; }
+.perfil-item .perfil-info p { color: #666; font: 500 17px/26px 'Uni Neue W05', Arial, Helvetica, sans-serif; text-rendering: optimizelegibility; margin: 0; }
+.perfil-item .btn-active { cursor: pointer; background: #742b64; border-radius: 50px; color: #fff; font: 500 16px/100% 'Uni Neue W05', Arial, Helvetica, sans-serif; padding: 12px 24px; position: absolute; bottom: 0; left: 50%; transform: translate(-50%,50%); }
+.perfil-item .btn-active:before { content: 'Leia mais'; }
+.perfil-item.on .btn-active:before { content: 'Fechar'; }
+
+.para-quem { padding: 80px 0; }
+.para-quem h2 { color: #742b64; font: 700 42px/100% 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: -0.5px; text-transform: none; position: relative; }
+.para-quem .wrap { display: flex; align-items: flex-start; justify-content: space-around; }
+.para-quem-item { flex: 0 0 20%; border: 2px solid rgba(0,0,0,0.0); border-radius: 16px; margin: 16px; padding: 24px; text-align: center; }
+.para-quem-item img { max-height: 124px; max-width: 100%; margin: 0 0 24px; }
+.para-quem-item .info h4 { color: #484848; font: 600 20px/105% 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 0 0 10px; padding: 0; }
+.para-quem-item .info p { color: #282828; font: 500 16px/135% 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 0; padding: 0; }
+
+.tecnicas { padding: 80px 0; }
+.tecnicas h2 { color: #f97a30; font: 700 42px/100% 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: -0.5px; text-transform: none; position: relative; }
+.tecnicas .wrap { display: flex; align-items: flex-start; justify-content: space-around; }
+.tecnicas-item { flex: 0 0 20%; border: 2px solid rgba(0,0,0,0.0); border-radius: 16px; margin: 16px; padding: 24px; text-align: center; }
+.tecnicas-item img { max-height: 124px; max-width: 100%; margin: 0 0 24px; }
+.tecnicas-item .info h4 { color: #484848; font: 600 20px/105% 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 0 0 10px; padding: 0; }
+.tecnicas-item .info p { color: #282828; font: 500 16px/135% 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 0; padding: 0; }
+
+.dashboard { border-radius: 6px; box-shadow: 0 10px 25px 0 rgba(0,0,0,0.125); }
+.dashboard img { display: block; width: 100%; height: auto; border-radius: 0 0 6px 6px; }
+.dashboard:before { content: ' • • • '; display: block; color: #fff; font-size: 20px; line-height: 32px; background: #742b64; background: -moz-linear-gradient(65deg, #742b64 0%, #9e1981 100%); background: -webkit-linear-gradient(65deg, #742b64 0%, #9e1981 100%); background: linear-gradient(65deg, #742b64 0%, #9e1981 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#742b64', endColorstr='#9e1981',GradientType=1 ); background-size: 100% 100%; border-radius: 6px 6px 0 0; height: 30px; padding: 0 10px; overflow: hidden; }
+
+.clientes { font-size: 0; padding: 60px 0; }
+.clientes h4 { color: #000; font: italic 600 20px/24px 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: -0.5px; margin: 0 0 50px; }
+.clientes h4:before { content: ''; background: #fff500; height: 24px; width: 24px; display: inline-block; margin: 0 10px 0 0; vertical-align: top; }
+.clientes ul, .clientes ul li { margin: 0; padding: 0; list-style: none; height: auto; width: 100%; }
+.clientes ul li { font-size: 0; text-align: center; float: left; width: 20%; }
+.clientes ul li a { display: block; width: 100%; margin: 20px 0; text-decoration: none; filter: grayscale(100%); opacity: .5; transition: all 0.5s ease; line-height: 80px; }
+.clientes ul li a:hover { filter: grayscale(0%); opacity: .85; }
+.clientes ul li img { display: inline-block; margin: 0 auto; padding: 0 10px; max-width: 200px; width: 85%; max-height: 80px; vertical-align: middle; }
+.clientes .prev { left: 60px; background: url(../images/arrow-prev2.html) center no-repeat; }
+.clientes .next { right: 60px; background: url(../images/arrow-next2.html) center no-repeat; }
+
+.planos { text-align: center; }
+.planos h2 { color: #f97a2f; font: 700 42px/100% 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: -0.5px; text-transform: none; position: relative; }
+.planos ul { list-style: none; font-size: 0; margin: 0; padding: 0; }
+.planos ul li { display: inline-block; width: 25%; overflow: visible !important; vertical-align: top; }
+.plano { background: #fff; border-radius: 16px; box-shadow: 0 10px 18px 0 rgba(0,0,0,.03); display: block; margin: 40px 10px; padding: 0; width: auto; transition: all 0.4s ease; position: relative; z-index: 1200;}
+.plano img { display: block; width: 100%; height: auto; margin: 15px; max-height: 100px; }
+.plano .info { min-height: auto; padding: 50px 30px; text-align: center; position: relative; left: 0; bottom: 0; width: 100%; }
+.plano .info h3 { color: #742b64; font: 600 32px/105% 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 30px 0 0; padding: 0; }
+.plano .info h4 { color: #282828; font: 600 24px/105% 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 0 0 20px; padding: 0; }
+.plano .info p { color: #282828; font: 500 16px/135% 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 0; padding: 0; }
+.plano .info ul { display: block; margin: 0; padding: 0; text-align: center; }
+.plano .info ul li { display: block; float: none; width: 100%; color: #555; font: 500 17px/135% 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 10px 0; padding: 0; }
+.plano .info ul li s { opacity: 0.5; }
+.plano .info:after { content: ''; height: 4px; width: 50%; border-radius: 30px; position: absolute; bottom: -2px; left: 25%; background: -moz-linear-gradient(65deg, #742b64 0%, #9e1981 100%); background: -webkit-linear-gradient(65deg, #742b64 0%, #9e1981 100%); background: linear-gradient(65deg, #742b64 0%, #9e1981 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#742b64', endColorstr='#9e1981',GradientType=1 ); }
+.plano .plano-action { display: block; background: #f97a2f; border: 0; border-radius: 50px; cursor: pointer; color: #fff; font: 500 15px/44px 'Uni Neue W05', Arial, Helvetica, sans-serif; height: 44px; width: 70%; margin: 30px auto 0; padding: 0 25px; text-decoration: none; }
+
+.cadastro { background: #f97a2f; height: auto; text-align: center; overflow: hidden; position: relative; }
+.cadastro h2 { color: #fff; font: 700 42px/115% 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: -1px; margin: 50px 0 30px; padding: 0; }
+.cadastro h2:first-line { font-weight: 400; }
+.cadastro img { position: absolute; right: 10%; top: 50%; height: 250%; transform: translate(0,-50%);  mix-blend-mode: overlay; opacity: 0.5; }
+.cadastro .cadastro-form { background: #fff; border: 0; border-radius: 50px; height: 54px; margin: 30px auto 50px; position: relative; max-width: 500px; z-index: 2000; }
+.cadastro .cadastro-form input[type="text"],
+.cadastro .cadastro-form input[type="email"] { background: none; border: 0; font: 500 16px/56px 'Uni Neue W05', Arial, Helvetica, sans-serif; height: 54px; padding: 0 30px; width: 100%; outline: none; }
+.cadastro .cadastro-form input[type="submit"] { background: #742b64; border: 0; border-radius: 0 50px 50px 0; cursor: pointer; color: #fff; font: 800 16px/56px 'Uni Neue W05', Arial, Helvetica, sans-serif; height: 54px; width: auto; padding: 0 27.5px 0 25px; position: absolute; top: 0; right: -2px; }
+
+.box-contato { background: #49113d; background: -moz-linear-gradient(65deg, #49113d 0%, #a2135d 100%); background: -webkit-linear-gradient(65deg, #49113d 0%, #a2135d 100%); background: linear-gradient(65deg, #49113d 0%, #a2135d 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#49113d', endColorstr='#a2135d',GradientType=1 ); height: auto; text-align: center; padding: 64px 0; overflow: hidden; position: relative; }
+.box-contato h3 { color: #fff; font: 700 42px/115% 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: -1px; margin: 0 0 40px; padding: 0; }
+.box-contato h3:first-line { font-weight: 400; }
+.box-contato a.btn { display: inline-block; background: none; background: #f97a2f; border: 0 solid rgba(255,255,255,1); border-radius: 50px; cursor: pointer; color: #fff; font: 600 22px 'Uni Neue W05', Arial, Helvetica, sans-serif; padding: 14px 32px 16px; text-decoration: none; }
+
+.c-form { margin: 0 auto; padding: 30px 0 50px; max-width: 800px; }
+.c-form label { display: block; margin: 0 0 20px; padding: 0 5px; width: 100%; }
+.c-form label span { display: block; color: rgba(0,0,0,0.5); font: 600 13px/20px 'Uni Neue W05', Arial, Helvetica, sans-serif; padding: 5px; }
+.c-form label .text { border: 2px solid #fff; border-radius: 2px; box-shadow: 0 7px 12px rgba(0,0,0,0.1); background: #fff; margin: 0; padding: 15px; outline: none; color: rgba(0,0,0,0.85); font: 500 15px/20px 'Uni Neue W05', Arial, Helvetica, sans-serif; width: 100%; transition: all 0.5s ease; text-transform: none; opacity: 0.85; }
+.c-form label select { height: 54px; padding: 10px; }
+.c-form label textarea { height: 120px; }
+.c-form div:not(.message) { text-align: center; padding: 10px 0 0; }
+.c-form div .btnEnviar { background: #742b64; border: 0; border-bottom: 2px solid rgba(0,0,0,0.15); border-radius: 50px; cursor: pointer; color: #fff; font: 600 18px/56px 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: 1px; height: 56px; width: auto; padding: 0 45px; }
+
+.infos { padding: 50px 0; text-align: left; font-size: 0; }
+.infos .c-infos { display: inline-block; width: 24%; margin: 0 0.5%; padding: 0 20px; vertical-align: top; position: relative; }
+
+/* Content */
+.title { background: #49113d; background: -moz-linear-gradient(65deg, #49113d 0%, #a2135d 100%); background: -webkit-linear-gradient(65deg, #49113d 0%, #a2135d 100%); background: linear-gradient(65deg, #49113d 0%, #a2135d 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#49113d', endColorstr='#a2135d',GradientType=1 ); background-size: 100% 100%; height: auto; margin: 0; padding: 250px 0 170px; position: relative; width: 100%; overflow: hidden; }
+.title img { position: absolute; right: 0%; top: 50%; height: 250%; transform: translate(0,-50%);  mix-blend-mode: multiply; opacity: 0.075; }
+.title h1 { color: #fff; font: 700 52px/105% 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: -1px; margin: 0; padding: 0; text-align: center; }
+.title h1:first-line { font-weight: 400; }
+.title h1:after { content: ''; border-radius: 30px; height: 6px; width: 160px; display: block; margin: 30px auto 0; background: #f97a2f; }
+
+.content { padding: 60px 0; }
+.content h1 { color: #742b64; font: 700 44px/100% 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: 0; margin: 0 0 25px; padding: 0; }
+.content h2 { color: #f97a2f; font: 600 30px/100% 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: 0; margin: 25px 0; padding: 0; }
+.content h3 { color: #444; font: 600 24px/40px 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: 0; margin: 15px 0; padding: 0; }
+.content h4 { color: #666; font: 600 18px/22px 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: 0; margin: 15px 0; padding: 0; }
+.content p { color: #666; font: 500 18px/175% 'Uni Neue W05', Arial, Helvetica, sans-serif; text-rendering: optimizelegibility; margin: 0 auto 24px; max-width: 800px; }
+.content ul,
+.content ol { color: #666; font: 500 16px/150% 'Uni Neue W05', Arial, Helvetica, sans-serif; text-rendering: optimizelegibility; font-feature-settings: "liga"; margin: 0 auto 24px; padding: 0 25px; max-width: 800px; }
+.content ul li,
+.content ol li { margin: 5px 0; padding: 0; }
+.content-text { margin: 0 auto; padding: 20px 0; max-width: 80%; }
+
+/* Empresa */
+.img-empresa { float: right; max-width: 45%; margin: 0 0 30px 50px; position: relative; }
+.img-empresa:after { content: ''; height: 4px; width: 50%; border-radius: 30px; position: absolute; bottom: 35px; right: -20px; background: #742b64; background: -moz-linear-gradient(65deg, #742b64 0%, rgb(195,0,100) 100%); background: -webkit-linear-gradient(65deg, #742b64 0%, rgb(195,0,100) 100%); background: linear-gradient(65deg, #742b64 0%, rgb(195,0,100) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#742b64', endColorstr='rgb(195,0,100)',GradientType=1 ); background-size: 100% 100%; }
+.img-empresa img { display: block; width: 100%; height: auto; border-radius: 6px 6px 6px 60px; box-shadow: 0 25px 65px rgb(0,0,0,0.35); position: relative; }
+
+/* Serviços */
+.title-funcionalidades h1 { text-align: left; padding: 200px 0 150px; }
+.title-funcionalidades h1:after { left: 0%; transform: translate(0,0); }
+.img-funcionalidades { float: right; width: 550px; max-width: 55%; margin: -350px 0 140px 50px; position: relative; z-index: 1200; }
+.img-funcionalidades:after { content: ''; height: 4px; width: 50%; border-radius: 30px; position: absolute; bottom: 35px; right: -20px; background: #742b64; background: -moz-linear-gradient(65deg, #742b64 0%, rgb(195,0,100) 100%); background: -webkit-linear-gradient(65deg, #742b64 0%, rgb(195,0,100) 100%); background: linear-gradient(65deg, #742b64 0%, rgb(195,0,100) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#742b64', endColorstr='rgb(195,0,100)',GradientType=1 ); background-size: 100% 100%; }
+.img-funcionalidades img { display: block; width: 100%; height: auto; border-radius: 6px 6px 6px 60px; box-shadow: 0 25px 65px rgb(0,0,0,0.35); position: relative; }
+.img-funcionalidades a { position: absolute; float: left; background: #282828; border: 2px solid #282828; color: #fff; border-radius: 50px; width: 100%; font: 800 15px 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: 1px; margin: 25px 0; padding: 25px 45px; text-align: center; text-decoration: none; text-transform: lowercase; transition: all 0.5s ease; text-transform: uppercase; }
+
+.funcionalidades-images { border-top: 1px solid rgba(0,0,0,0.1); margin: 60px 0 0; padding: 60px 0 0; font-size: 0; }
+.funcionalidades-images a { display: inline-block; margin: 10px 0.5%; padding: 0; border-radius: 3px; vertical-align: top; width: 19%; background-size: cover; background-position: center; }
+.funcionalidades-images a img { border-radius: 3px; width: 100%; height: auto; }
+
+/* Mensagens */
+.sucesso { background: #d9edd7 url(../images/painel/sucesso.png) 10px center no-repeat; border: 1px solid #a1d29a; border-radius: 2px; color: #575f56; font: bold 0.688em/2.273em Tahoma, Geneva, sans-serif; margin: 0 0 20px; padding: 10px 10px 10px 50px; }
+.alerta { background: #ffefcc url(../images/painel/alerta.png) 10px center no-repeat; border: 1px solid #ffd67f; border-radius: 2px; color: #de8912; font: bold 0.688em/2.273em Tahoma, Geneva, sans-serif; margin: 0 0 20px; padding: 10px 10px 10px 50px; }
+.informacao { background: #ccdcff url(../images/painel/informacao.png) 10px center no-repeat; border: 1px solid #7fa6ff; border-radius: 2px; color: #3d4a66; font: bold 0.688em/2.273em Tahoma, Geneva, sans-serif; margin: 0 0 20px; padding: 10px 10px 10px 50px; }
+.erro { background: #ffcccc url(../images/painel/erro.png) 10px center no-repeat; border: 1px solid #ff7f7f; border-radius: 2px; color: #ba4747; font: bold 0.688em/2.273em Tahoma, Geneva, sans-serif; margin: 0 0 20px; padding: 10px 10px 10px 50px; }
+.msg { background: #000; color: #fff; text-align: center; height: 80px; font: 700 1em/5.000em 'Lato', Tahoma, Arial, Helvetica, sans-serif; text-transform: uppercase; text-align: center; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 9999; opacity: 0.75; }
+
+/* Modal */
+.modal { display: none; max-width: 700px; padding: 45px !important; }
+.modal h2 { color: #2f2f2f; font: 700 36px/38px 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: 0; margin: 0 0 20px; padding: 0; }
+.modal p { color: #2f2f2f; font: 400 18px/28px 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: 0; margin: 0 0 10px; padding: 0; }
+.modal .c-form { width: 100%; }
+.modal label { clear: both; display: block; padding: 5px; }
+.modal label span { color: #666; display: block; font: 500 13px 'Uni Neue W05', Tahoma, Geneva, sans-serif; padding: 5px 8px; text-transform: none; }
+.modal label .text { border: 2px solid #bbb; border-radius: 2px; background: #fff; margin: 0; padding: 10px 15px; outline: none; color: rgba(0,0,0,0.7); font: 500 13px/30px 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: -0.003em; width: 100%; transition: all 0.5s ease; text-transform: none; }
+.modal label select { height: 54px; padding: 10px; }
+.modal label textarea { height: 120px; }
+.modal .c-form div:not(.message) { text-align: center; padding: 25px; position: relative; }
+.modal .c-form div .btnEnviar { cursor: pointer; border: 0; border-radius: 3px; background: #3ccbb5; margin: 0; height: auto; color: #fff; font: 700 16px 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: 2px; width: auto; padding: 20px 40px; transition: all 0.5s ease; text-transform: uppercase; }
+label.cv-field { display: none; }
+
+*:disabled { border: 2px solid rgba(0,0,0,0.05) !important; opacity: 0.75; cursor: not-allowed; }
+
+/* Blog */
+.blog-categorias { border-bottom: 1px solid rgba(0,0,0,0.05); font-size: 0; height: 28px; margin: 0 0 60px; position: relative; }
+.blog-categorias a { display: inline-block; box-shadow: 0 5px 15px rgba(0,0,0,0.075); color: #742b64; font: 500 16px/26px 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 0 5px; padding: 10px 30px; text-decoration: none; background: #fff; border-radius: 50px; border: 5px solid #fafafa; }
+.blog-categorias a:hover { color: #fff; background: #742b64; }
+
+.blog-wrap { font-size: 0; }
+.blog-post-item { display: inline-block; background: #fff; border-radius: 3px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); margin: 0 0.5% 20px; padding: 0; width: 32.333333%; vertical-align: top; }
+.blog-post-item .blog-post-img { border-radius: 1px 1px 0 0; display: block; height: 250px; margin: 0 !important; text-decoration: none; background-color: #fafafa !important; }
+.blog-post-item .blog-post-info { border-radius: 0 0 1px 1px; height: 140px; padding: 20px 30px; }
+.blog-post-item .blog-post-info h3 { font: 500 18px/22px 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 0 0 10px; padding: 0; }
+.blog-post-item .blog-post-info h3 a { color: #020202; display: block; text-decoration: none; transition: all 0.5s ease; }
+.blog-post-item .blog-post-info h3 a:hover { color: #161616; }
+.blog-post-item .blog-post-info p { color: rgba(0,0,0,0.5); font: 500 14px/20px 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 0; padding: 0; }
+
+.blog-post { max-width: 1140px; margin: 0 auto; padding: 50px; }
+.blog-post img { max-width: 100% !important; height: auto !important; display: block; margin: 35px auto; border-radius: 3px; }
+.content .blog-post h1,
+.content .blog-post h2,
+.content .blog-post h3,
+.content .blog-post p,
+.content .blog-post ul,
+.content .blog-post ol { max-width: 800px; margin-left: auto; margin-right: auto; }
+
+/* Splash */
+.splash { border-top: 10px solid #f97a2f;  }
+.splash .websites-wrapper { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; max-width: 1080px; margin: 0 auto; padding: 80px 40px 40px; }
+.splash .options { flex: 0 0 30%; display: flex; align-items: center; justify-content: center; flex-direction: column; background: #fff; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; margin: 8px 0; padding: 32px; position: relative; transition: all 0.45s ease; text-decoration: none; }
+.splash .options img { max-width: 100%; margin: 12px 0 32px; }
+.splash .options div { flex: 1 1 auto; }
+.splash .options p { color: #666; font: 500 16px/120% 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 0 0 24px; padding: 0; transition: all 0.45s ease; text-align: left; }
+.splash .options ul { color: #666; font: 500 13px/120% 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 0; padding: 0; transition: all 0.45s ease; list-style: none; }
+.splash .options ul li { display: inline-block; margin: 4px; padding: 3px 8px; border-radius: 50px; background: #7c1f88; color: #fff; }
+.splash .options:nth-child(2) ul li { background: #f97a2f; }
+.splash .options:nth-child(3) { opacity: 0.5; }
+.splash .options:nth-child(3) ul li { background: #04368e; }
+.splash .options:last-child:after { display: none; }
+
+
+@media screen and (max-width: 1280px){
+    /* General */
+
+    /* Header */
+    header nav a { margin: 0 0 0 10px; }
+    header nav a:hover { color: #f97a2f; }
+
+    /* Home */
+        /* PUB */
+        .pub .btns-cta { width: 60%; }
+
+}
+
+@media screen and (max-width: 1280px){
+    /* General */
+
+    /* Header */
+    header .logotipo { margin: 0 20px 0 0; }
+    header nav a { font-size: 15px; margin: 0 0 0 5px; }
+
+    /* Home */
+        /* PUB */
+        .pub .square-wrap { padding: 0 60px 120px 0; width: 35%; min-width: auto; }
+        .pub .square { font: 500 36px/115% 'Uni Neue W05', Arial, Helvetica, sans-serif; height: auto; padding: 40px; }
+        .pub .square strong { font-size: 54px; }
+
+}
+
+@media screen and (max-width: 1080px){
+    /* General */
+    .wrap { padding: 0 30px; }
+
+    /* Header */
+    header nav a { font-size: 15px; margin: 0; padding: 0 10px; }
+
+    /* Footer */
+    .infos .c-infos:first-child { display: none; }
+    .infos .c-infos { width: 32.333333%; }
+
+
+    /* Home */
+        /* PUB */
+        .pub .btns-cta { padding: 0 0 120px 40px; width: 65%; }
+
+        .pub .square-wrap { padding: 0 40px 120px 0; width: 32.5%; }
+        .pub .square { font: 500 33px/115% 'Uni Neue W05', Arial, Helvetica, sans-serif; height: auto; padding: 35px; }
+        .pub .square strong { font-size: 48px; }
+
+    /* Planos */
+        .planos ul li { width: 25%; }
+
+}
+
+@media screen and (max-width: 960px){
+
+    /* Header */
+    header,
+    header.fixed { background: #fff; border: 0; position: fixed; padding: 20px 0; }
+    header .nav-ico { cursor: pointer; float: right; display: block; border-top: 3px solid #742b64; width: 35px; height: 23px; margin: 8.5px 0 0; position: relative; transition: all 0.5s ease; }
+    header .nav-ico:before { content: ''; display: block; background: #742b64; height: 3px; width: 100%; position: absolute; top: 7px; left: 0; transition: all 0.5s ease; }
+    header .nav-ico:after { content: ''; display: block; background: #742b64; height: 3px; width: 100%; position: absolute; bottom: 0; left: 0; transition: all 0.5s ease; }
+
+    header .close-ico { display: block; text-align: right; }
+    header .close-ico span { cursor: pointer; display: inline-block; border-top: 0; width: 35px; height: 23px; margin: 0 auto 15px; position: relative; transition: all 0.5s ease; }
+    header .close-ico span:before { content: ''; display: block; width: 100%; left: 0; height: 3px; background: #742b64; position: absolute; transform: rotate(45deg); top: 10px; }
+    header .close-ico span:after { content: ''; display: block; width: 100%; left: 0; height: 3px; background: #742b64; position: absolute; transform: rotate(135deg); bottom: initial; top: 10px; }
+
+    header .logotipo-md { background: url(../images/logotipo-growthbuy-mkt-color.png) center no-repeat; background-size: contain; }
+    header .logotipo-ds { background: url(../images/logotipo-growthbuy-ds-color.png) center no-repeat; background-size: contain; }
+    header .logotipo img { visibility: hidden; max-height: 40px; }
+    header nav { background: #fff; box-shadow: 0 0 50px rgba(0,0,0,0.15); position: fixed; top: 0; right: -360px; width: 360px; height: 100%; overflow: auto; margin: 0; padding: 25px 20px; transition: all 0.45s ease; text-align: center; z-index: 2000; }
+    header nav.on { right: 0; }
+    header nav a,
+    header.fixed nav a:not(.btn-demo) { color: #484848; display: block; font: 600 18px/30px 'Uni Neue W05', Arial, Helvetica, sans-serif; letter-spacing: 0; margin: 5px 25px; padding: 10px; text-decoration: none; text-transform: none; transition: all 0.45s ease; }
+    header nav a.btn-demo { background: #742b64; border: 0; border-radius: 50px; cursor: pointer; color: #fff; font: 500 16px/50px 'Uni Neue W05', Arial, Helvetica, sans-serif; height: auto; width: auto; margin: 30px 25px 0; padding: 0 25px; position: relative; top: initial; right: initial; }
+
+    /* Footer */
+    .infos { padding: 0; }
+    .wp-fixed { bottom: 20px; right: initial; left: 20px; }
+
+    /* Home */
+        /* PUB */
+        .pub { height: 85%; min-height: 580px; max-height: 700px; }
+        .pub h1 { text-align: center; }
+        .pub .btns-cta { width: 100%; padding: 0 30px 100px; }
+        .pub .btns-cta .pub-form { margin: 0 auto 40px; position: relative; max-width: 600px; width: 100%; }
+        .pub .btns-cta ul,
+        .pub .btns-cta ol { margin: 0 auto; max-width: 600px; width: 100%; }
+        .pub .square-wrap { display: none; }
+
+        .disclaimer .disclaimer-bg { padding: 30px 0; text-align: center; }
+        .disclaimer h2 { font: 300 42px/105% 'Uni Neue W05', Arial, Helvetica, sans-serif; }
+
+    /* Content */
+    .section { padding: 40px 0; }
+    .section .w-50 { padding: 0 15px; }
+
+    .funcionalidade,
+    .plano { margin: 25px 10px; }
+
+    /* Blog */
+    .blog-post-item { width: 48%; margin: 15px 1%; }
+    .blog-mais .blog-post-item:nth-child(3) { display: none; }
+
+}
+
+@media screen and (max-width: 768px){
+
+    /* General */
+
+    /* Footer */
+    footer { padding: 25px 0; }
+    footer h5:after { margin: 20px auto; }
+    .infos .c-infos { padding: 20px; width: 99%; text-align: center; }
+
+    /* Home */
+        /* PUB */
+        .pub { height: 100%; min-height: 580px; max-height: 600px; }
+
+        .perfis,
+        .como-fazemos,
+        .tecnicas,
+        .para-quem { padding: 40px 0; }
+        .perfis .wrap { flex-direction: column; }
+        .perfil-item { flex: 1 1 100%; margin: 32px 0; }
+
+        .como-fazemos .wrap { flex-wrap: wrap; }
+        .como-fazemos-item { flex: 1 1 100%; width: 100%; height: 180px; margin: 0; padding: 0 32px; }
+        .como-fazemos-item:after { content: '\f078'; font-family: 'FontAwesome'; font-size: 14px; display: flex; align-items: center; justify-content: center; color: #fff; position: absolute; top: initial; bottom: -22px; right: initial; left: 50%; transform: translate(-50%,0); }
+
+        .tecnicas .wrap { flex-wrap: wrap; }
+        .tecnicas-item { flex: 0 0 48%; margin: 16px 0; }
+
+        .para-quem .wrap { flex-wrap: wrap; }
+        .para-quem-item { flex: 0 0 48%; margin: 16px 0; }
+
+    /* Content */
+    .section .w-50 { padding: 10px 25px; width: 100%; }
+
+    .planos ul li { width: 100%; }
+    .plano { margin: 5px 0; }
+
+    .title { padding: 150px 0 75px; }
+    .title h1 { font: 700 42px/105% 'Uni Neue W05', Arial, Helvetica, sans-serif; }
+    .title h1:after { content: ''; border-radius: 30px; height: 6px; width: 160px; display: block; margin: 30px auto 0; background: #f97a2f; }
+    .content { padding: 35px 0; }
+}
+
+@media screen and (max-width: 600px){
+
+    /* General */
+    .wrap { padding: 0 20px; }
+
+    /* Footer */
+    .cadastro h2 { color: #fff; font: 700 28px/125% 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 30px 0 10px; }
+    .cadastro h2 br { display: none; }
+    .cadastro img { opacity: 0.25; }
+    .cadastro .cadastro-form { margin: 25px auto 35px; position: relative; }
+    .cadastro .cadastro-form input[type="text"],
+    .cadastro .cadastro-form input[type="email"] { font: 500 14px/56px 'Uni Neue W05', Arial, Helvetica, sans-serif; padding: 0 20px; }
+    .cadastro .cadastro-form input[type="submit"] { font: 500 14px/56px 'Uni Neue W05', Arial, Helvetica, sans-serif; padding: 0 20px 0 12.5px; }
+
+    /* Home */
+        /* PUB */
+        .pub h1 { font: 700 42px/105% 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 0 0 40px; }
+        .pub .btns-cta { width: 100%; padding: 0 30px 80px; }
+        .pub .btns-cta .pub-form { margin: 0 auto 20px; }
+        .pub .btns-cta ul li,
+        .pub .btns-cta ol li { font: 500 14px/26px 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 0; padding: 0; }
+
+
+        .disclaimer .disclaimer-bg { padding: 25px; }
+        .disclaimer h2 { font: 300 36px/105% 'Uni Neue W05', Arial, Helvetica, sans-serif; }
+        .disclaimer h2 br { display: none; }
+
+    /* Blog */
+    .blog-post { padding: 0; }
+    .blog-post-item { width: 100%; margin: 15px 0; }
+    .blog-mais .blog-post-item:nth-child(3) { display: inline-block; }
+
+}
+
+@media screen and (max-width: 500px){
+
+    /* Header */
+    header { padding: 15px 0 12.5px; }
+
+    /* Home */
+        /* PUB */
+        .pub h1 { font: 700 36px/105% 'Uni Neue W05', Arial, Helvetica, sans-serif; margin: 0 0 30px; }
+        .pub .btns-cta { width: 100%; padding: 0 30px 70px; }
+        .pub .btns-cta .pub-form input[type="text"],
+        .pub .btns-cta .pub-form input[type="email"] { font: 500 14px/56px 'Uni Neue W05', Arial, Helvetica, sans-serif; padding: 0 20px; }
+        .pub .btns-cta .pub-form input[type="submit"] { font: 500 14px/56px 'Uni Neue W05', Arial, Helvetica, sans-serif; padding: 0 20px 0 12.5px; }
+        .pub .btns-cta ul,
+        .pub .btns-cta ol { columns: 1; -webkit-columns: 1;  -moz-columns: 1; display: block; max-width: 240px; }
+        .disclaimer h2 { font: 300 36px/115% 'Uni Neue W05', Arial, Helvetica, sans-serif; }
+
+        .perfis,
+        .como-fazemos,
+        .tecnicas,
+        .para-quem { padding: 32px 0; }
+        .perfis .wrap { flex-direction: column; }
+        .perfil-item { padding: 24px; }
+        .perfil-item .perfil-img { width: 120px; height: 120px; margin: -50px auto 24px; }
+        .perfil-item .perfil-img img { width: 120px; height: 120px; }
+
+        .como-fazemos-item { height: auto; padding: 40px 24px; }
+
+    /* Content */
+    .section .w-50 { padding: 10px; width: 100%; }
+
+    /* Blog */
+    .blog-categorias { display: none; }
+
+    /* Splash */
+    .splash .websites-wrapper { padding: 24px; }
+    .splash .options { flex: 0 0 100%; width: 100%; margin: 8px 0; }
+}
+
+@media screen and (max-width: 410px){
+    .tecnicas .wrap { flex-wrap: wrap; }
+    .tecnicas-item { flex: 0 0 100%; margin: 8px 0; }
+
+    .para-quem .wrap { flex-wrap: wrap; }
+    .para-quem-item { flex: 0 0 100%; margin: 8px 0; }
+}
